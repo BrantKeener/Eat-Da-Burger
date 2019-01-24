@@ -10,8 +10,8 @@
     "type": "git",
     "url": "git+https://github.com/BrantKeener/Eat-Da-Burger.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["burgers", "restaurant", "fun", "burgORM"],
+  "author": "Brant Keener",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/BrantKeener/Eat-Da-Burger/issues"

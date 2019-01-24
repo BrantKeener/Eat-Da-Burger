@@ -5,8 +5,11 @@
 
 const mysql = require('mysql');
 const path = require('path');
+
+// Added a .env to protect the db password
 const env = require('dotenv').config({ path: path.join(__dirname, '../.env')});
 
+// Create the connection variable
 const connection = mysql.createConnection({
     host: 'localhost',
     port: 3306,
@@ -15,9 +18,11 @@ const connection = mysql.createConnection({
     database: 'burgers_db'
 });
 
+// Connect to our DB
 connection.connect((err) => {
     if(err) throw err;
     console.log(`Connected as id ${connection.threadId}`)
 });
 
+// Exporting to orm.js
 module.exports = connection;

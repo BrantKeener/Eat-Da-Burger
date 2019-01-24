@@ -19,17 +19,18 @@ insertOne = (table, columns, name, status, cb) => {
     queryString += `VALUES(?, ?);`
     connection.query(queryString, [table, [columns], name, status], (err, res) => {
         if(err) throw err;
-        cb('New burger successfully added!');
+        cb(res);
     });
 };
 
 // Update the devoured status of a burger
-updateOne = (table, column, id, name, status, cb) => {
+updateOne = (table, column, id, status, cb) => {
     const queryString = `UPDATE ?? SET ?? = ? WHERE id = ?;`
     connection.query(queryString, [table, column, status, id], (err, res) => {
         if(err) throw err;
-        cb(`${name} has been devoured!`);
+        cb(res);
     });
 };
 
+// Exporting to models/burgers.js
 module.exports = {selectAll, insertOne, updateOne};
