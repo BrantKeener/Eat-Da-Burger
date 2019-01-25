@@ -2,6 +2,7 @@
 // This will control our client-side js needs
 
 // TODO add modal functionality for empty strings
+// TODO add modal functionality for burger update?
 
 // Event Delegation
 document.addEventListener('click', (event) => {
@@ -49,7 +50,7 @@ addBurger = () => {
                     "Content-Type": "application/json"
                 }
             }).then(res => {
-                console.log(res);
+                location.reload()
             })
         } else {
             // Modal for empty field
