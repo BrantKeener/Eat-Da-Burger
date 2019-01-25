@@ -13,7 +13,6 @@ router.get('/', (req, res) => {
         const hasObject = {
             burgers: data
         };
-        console.log(hasObject);
         res.render('index', hasObject);
     });
 });
