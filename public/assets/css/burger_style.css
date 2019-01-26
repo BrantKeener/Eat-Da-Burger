@@ -1,1 +1,162 @@
 /* TODO style! */
+
+:root {
+    --header-fonts: 'Righteous', cursive;
+    --body-fonts: 'Cinzel', serif;
+    --burger-bun: rgb(110,68,11);
+}
+
+body, html {
+    padding: 0%;
+    margin: 0%;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-image: url('../img/burger_grill.jpg');
+    background-size: cover;
+}
+
+/* Button reset */
+button {
+    padding: 0%;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+h2 {
+    font-family: var(--header-fonts);
+    color: white;
+    -webkit-text-stroke: 1px black;
+}
+
+#add-a-burg {
+    display: flex;
+    flex-wrap: column;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+#add-submit {
+    width: 225px;
+    border-top: 30px solid var(--burger-bun);
+    border-bottom: 15px solid var(--burger-bun);
+    border-radius: 50px 50px 5px 5px;
+    margin-top: 5%;
+    padding: 2%;
+    font-family: var(--header-fonts);
+    font-size: 0rem;
+    box-shadow: 5px 5px 5px black;
+    transition: font-size 0.5s ease;
+}
+
+#add-submit:hover {
+    font-size: 1.5rem;
+}
+
+#big-burger {
+    justify-self: center;
+}
+
+#burg-display-area {
+    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#burg-name {
+    height: 50px;
+    width: 450px;
+    font-size: 2rem;
+    font-family: var(--header-fonts);
+}
+
+#burg-legend {
+    color: white;
+    -webkit-text-stroke: 1px black;
+}
+
+#content-container {
+    display: grid;
+    grid-template-rows: 1fr, 2fr;
+}
+
+.devour-burg {
+    font-family: var(--header-fonts);
+    border: 1px solid black;
+    margin: 2px 0px;
+    padding: 2px 2px;
+    border-radius: 5rem;
+    background-color: white;
+    transition: background-color 2s ease, color 2s ease;
+}
+
+.devour-burg:hover {
+    background-color: darkblue;
+    color: white;
+}
+
+#eaten, #not-eaten {
+    border: 2px solid black;
+    height: 400px;
+    width: 400px;
+    overflow-y: scroll;
+    box-shadow: 5px 5px 5px black;
+    background-image: url('../img/table_cloth.jpg');
+    padding: 2px 10px;
+}
+
+.eaten-burger, .uneaten-burger {
+    font-family: var(--body-fonts);
+    font-size: 1.5rem;
+    border: 1px solid black;
+    color: white;
+    background-color: darkblue;
+}
+
+.eaten-burger {
+    margin: 5px 0px;
+}
+
+#form-house {
+    /* display: flex;
+    flex-flow: row; */
+    text-align: center;
+    width: 500px;
+    height: 215px;
+    box-shadow: 5px 5px 5px black;
+    font-family: var(--header-fonts);
+    background-image: url('../img/table_cloth.jpg');
+}
+
+#main-content {
+    margin-top: 5%;
+    animation: fadein 5s;
+}
+
+#title {
+    color: red;
+    text-shadow: 7px 7px 4px rgba(0, 0, 0, 1);
+    opacity: 0;
+    font-family: var(--header-fonts);
+    font-size: 100px;
+    position: absolute;
+    left: 20%;
+    animation: fadeinout 2s;
+}
+
+/* Keyframes */
+
+@keyframes fadein {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+@keyframes fadeinout {
+    from {opacity: 1}
+    to {opacity: 0}
+}

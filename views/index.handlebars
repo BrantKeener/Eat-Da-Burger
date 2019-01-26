@@ -8,12 +8,14 @@
         <ol>
             {{#each burgers}}
                 {{#unless devoured}}
-                    <li>{{this.burger_name}}</li><button id="devour-burg" data-id={{this.id}}>Devour It!</button>
+                    <li class="uneaten-burger">{{this.burger_name}}</li><button class="devour-burg" data-id={{this.id}}>Devour It!</button>
                 {{/unless}}
             {{/each}}
         </ol>
 
     </section>
+
+    <img id="big-burger" src="../public/assets/img/Cali_burger.png">
 
     <section id="eaten">
 
@@ -22,7 +24,7 @@
         <ol>
             {{#each burgers}}
                 {{#if devoured}}
-                    <li data-id={{this.id}}>{{this.burger_name}}</li>
+                    <li class="eaten-burger" data-id={{this.id}}>{{this.burger_name}}</li>
                 {{/if}}
             {{/each}}
         </ol>
@@ -32,11 +34,13 @@
 </section>
 
 <form id="add-a-burg">
-    <fieldset>
-        <legend>Add A Burger Here</legend>
+    <fieldset id="form-house">
+        <legend id="burg-legend">Add A Burger Here</legend>
         <label for="burg-name">
             <input type="text" id="burg-name" name="burg-name">
         </label>
-        <button id="add-submit" type="submit">Add Your Burger</button>
+        <section id="submit-area">
+            <button id="add-submit" type="submit">Add Your Burger</button>
+        </section>
     </fieldset>
 </form>

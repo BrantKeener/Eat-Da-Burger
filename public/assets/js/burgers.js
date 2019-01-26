@@ -9,9 +9,15 @@ document.addEventListener('click', (event) => {
     if(event.target.id === 'add-submit') {
         event.preventDefault();
     }
-    const id = event.target.id;
+    const buttonClick = () => {
+        if(event.target.id === '')
+            return event.target.className;
+        else {
+            return event.target.id;
+        };
+    };
     const data = event.target.dataset.id; 
-    switch(id) {
+    switch(buttonClick()) {
         case('devour-burg'):
         devourIt(data);
         break;
