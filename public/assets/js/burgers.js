@@ -3,6 +3,35 @@
 
 // TODO add modal functionality for empty strings
 // TODO add modal functionality for burger update?
+// Clear the form values not necessary due to page reload on submission
+// TODO after first load, change so page does not continually do the load screen.
+
+// Evaluate session data, and if the user is still in the same session, do not run the load animations
+document.addEventListener('DOMContentLoaded', shouldAnimate = () => {
+    const data = sessionStorage.getItem('singleSess');
+    if(data !== 'true') {
+        setTimeout(fadeClassChange, 4000);
+    } else {
+        fadeClassChange();
+    }
+    sessionKeeper();
+});
+
+// This will disable our animation by removing classes. Only toggles the first time (so animation will run once)
+const fadeClassChange = () => {
+    const title = document.getElementById('title');
+    const content = document.getElementById('content-container');
+    title.classList.toggle('fade-out');
+    content.classList.toggle('fade-in');
+};
+
+// We do not want the title load animations to fire after the user has begun their session, we're going to store a little session data
+sessionKeeper = () => {
+    const data = sessionStorage.getItem('singleSess');
+    if(data === null) {
+        sessionStorage.setItem('singleSess', true);
+    };
+};
 
 // Event Delegation
 document.addEventListener('click', (event) => {
@@ -31,6 +60,7 @@ document.addEventListener('click', (event) => {
 devourIt = (data) => {
     const url = `/api/burgers/${data}`;
     const status = {'status': 1};
+    const sessStatus = sessionStorage.getItem('singleSess');
     fetch(url, {
         method: 'PUT',
         body: JSON.stringify(status),

@@ -1,4 +1,5 @@
 /* TODO maybe mobile responsive? */
+/* Write a README */
 
 :root {
     --header-fonts: 'Righteous', cursive;
@@ -79,11 +80,14 @@ h2 {
 #burg-legend {
     color: white;
     -webkit-text-stroke: 1px black;
+    font-size: 3rem;
 }
 
 #content-container {
     display: grid;
     grid-template-rows: 1fr, 2fr;
+    background-color: rgba(110, 104, 104, .8);
+    height: 100%;
 }
 
 .devour-burg {
@@ -123,18 +127,26 @@ h2 {
     margin: 5px 0px;
 }
 
+.fade-in {
+    animation: fadein 5s;
+}
+
+.fade-out {
+    animation: fadeinout 5s;
+}
+
 #form-house {
     text-align: center;
     width: 500px;
-    height: 215px;
+    height: 240px;
     box-shadow: 5px 5px 5px black;
     font-family: var(--header-fonts);
     background-image: url('../img/table_cloth.jpg');
+    margin-top: 20px;
 }
 
 #main-content {
     margin-top: 5%;
-    animation: fadein 5s;
 }
 
 #title {
@@ -145,7 +157,6 @@ h2 {
     font-size: 100px;
     position: absolute;
     left: 20%;
-    animation: fadeinout 2s;
 }
 
 /* Keyframes */
@@ -158,4 +169,40 @@ h2 {
 @keyframes fadeinout {
     from {opacity: 1}
     to {opacity: 0}
+}
+
+@media screen and (max-width: 1400px) {
+    #big-burger {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    #big-burger {
+        width: 100px;
+    }
+    #eaten {
+        margin-right: 5px;
+    }
+    #not-eaten {
+        margin-left: 5px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    #big-burger {
+        visibility: hidden;
+    }
+    #burg-display-area {
+        display: flex;
+        flex-flow: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    #eaten, #not-eaten {
+        width: 90%;
+    }
+    #form-house {
+        width: 90%;
+    }
 }
