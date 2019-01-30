@@ -3,8 +3,6 @@
 
 // TODO add modal functionality for empty strings
 // TODO add modal functionality for burger update?
-// Clear the form values not necessary due to page reload on submission
-// TODO after first load, change so page does not continually do the load screen.
 
 // Evaluate session data, and if the user is still in the same session, do not run the load animations
 document.addEventListener('DOMContentLoaded', shouldAnimate = () => {
