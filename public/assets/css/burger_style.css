@@ -83,6 +83,25 @@ h2 {
     font-size: 3rem;
 }
 
+#close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: white;
+    color: darkblue;
+    margin: 5px 5px 0px 0px;
+    box-shadow: 5px 5px 5px black;
+    transition: background-color 0.75s ease, color 0.75s ease;
+}
+
+#close-button:hover {
+    background-color: darkblue;
+    color: white;
+}
+
 #content-container {
     display: grid;
     grid-template-rows: 1fr, 2fr;
@@ -97,7 +116,7 @@ h2 {
     padding: 2px 2px;
     border-radius: 5rem;
     background-color: white;
-    transition: background-color 2s ease, color 2s ease;
+    transition: background-color 0.75s ease, color 0.75s ease;
 }
 
 .devour-burg:hover {
@@ -149,6 +168,37 @@ h2 {
     margin-top: 5%;
 }
 
+#modal-box {
+    font-family: var(--header-fonts);
+    font-size: 2.25rem;
+    background-color: var(--burger-bun);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 250px;
+    border-radius: .25rem;
+    box-shadow: 5px 5px 5px black;
+    transform: translate(-50%, -50%);
+    padding: 25px;
+    color: white;
+    -webkit-text-stroke: 2px black;
+}
+
+#modal-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(110, 104, 104, .8);
+}
+
+.modal-container-class {
+    visibility: hidden;
+}
+
+.modal-display {
+    visibility: visible;
+}
+
 #title {
     color: red;
     text-shadow: 7px 7px 4px rgba(0, 0, 0, 1);
@@ -171,6 +221,8 @@ h2 {
     to {opacity: 0}
 }
 
+/* Media Queries */
+
 @media screen and (max-width: 1400px) {
     #big-burger {
         width: 300px;
@@ -183,6 +235,9 @@ h2 {
     }
     #eaten {
         margin-right: 5px;
+    }
+    #modal-box {
+        font-size: 2rem;
     }
     #not-eaten {
         margin-left: 5px;
@@ -204,5 +259,8 @@ h2 {
     }
     #form-house {
         width: 90%;
+    }
+    #modal-box {
+        width: 60%;
     }
 }

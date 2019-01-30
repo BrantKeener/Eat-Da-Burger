@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', shouldAnimate = () => {
 const fadeClassChange = () => {
     const title = document.getElementById('title');
     const content = document.getElementById('content-container');
-    title.classList.toggle('fade-out');
+    // title.classList.toggle('fade-out');
+    title.style = 'display: none';
     content.classList.toggle('fade-in');
 };
 
@@ -33,6 +34,7 @@ sessionKeeper = () => {
 
 // Event Delegation
 document.addEventListener('click', (event) => {
+    console.log(event.target.id);
     if(event.target.id === 'add-submit') {
         event.preventDefault();
     }
@@ -51,6 +53,12 @@ document.addEventListener('click', (event) => {
         case('add-submit'):
         addBurger();
         break;
+        case('modal-container'):
+        toggleModal();
+        break;
+        case('close-button'):
+        toggleModal();
+        break;
     };
 });
 
@@ -58,7 +66,6 @@ document.addEventListener('click', (event) => {
 devourIt = (data) => {
     const url = `/api/burgers/${data}`;
     const status = {'status': 1};
-    const sessStatus = sessionStorage.getItem('singleSess');
     fetch(url, {
         method: 'PUT',
         body: JSON.stringify(status),
@@ -87,11 +94,16 @@ addBurger = () => {
                 location.reload()
             })
         } else {
-            // Modal for empty field
+            toggleModal();
             return;
         };
     } else {
-        // Modal for empty field
+        toggleModal();
         return;
     };
 };
+
+const toggleModal = () => {
+    const modal = document.getElementById('modal-container');
+    modal.classList.toggle('modal-display');
+}
