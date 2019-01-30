@@ -6,17 +6,24 @@
 const mysql = require('mysql');
 const path = require('path');
 
+// A connection variable to be changed depending on whether local or JawsDB
+let connection;
+
 // Added a .env to protect the db password
 const env = require('dotenv').config({ path: path.join(__dirname, '../.env')});
 
-// Create the connection variable
-const connection = mysql.createConnection({
-    host: 'localhost',
-    port: 3306,
-    user: 'root',
-    password: process.env.DB_PASS,
-    database: 'burgers_db'
-});
+// Jaws.DB provisions
+if(process.env.JAWSDB_URL) {
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+    connection = mysql.createConnection({
+        host: 'localhost',
+        port: 3306,
+        user: 'root',
+        password: process.env.DB_PASS,
+        database: 'burgers_db'
+    });
+};
 
 // Connect to our DB
 connection.connect((err) => {
