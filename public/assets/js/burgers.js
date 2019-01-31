@@ -78,7 +78,7 @@ devourIt = (data) => {
 
 // Function to send our new burger data to the database
 addBurger = () => {
-    const name = document.getElementsByName('burg-name')[0].value;
+    let name = document.getElementsByName('burg-name')[0].value;
     const url = '/api/burgers'
     const newBurger = {'name': name};
     if(name !== '') {
