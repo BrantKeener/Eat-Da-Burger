@@ -53,11 +53,15 @@ h2 {
     font-family: var(--header-fonts);
     font-size: 0rem;
     box-shadow: 5px 5px 5px black;
-    transition: font-size 0.5s ease;
+    transition: font-size 0.5s ease, background-color 0.5s ease;
+    color: white;
+    -webkit-text-stroke: 1px black;
+    background-color: rgba(73, 38, 38, 0.8);
 }
 
 #add-submit:hover {
     font-size: 1.5rem;
+    background-color: rgb(73, 38, 38, 1);
 }
 
 #big-burger {
