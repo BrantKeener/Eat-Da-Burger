@@ -253,6 +253,7 @@ h2 {
         visibility: hidden;
     }
     #burg-display-area {
+        margin: 25px;
         display: flex;
         flex-flow: column;
         flex-wrap: wrap;
@@ -262,9 +263,17 @@ h2 {
         width: 90%;
     }
     #form-house {
+        margin: 0px 25px 25px;
         width: 90%;
     }
     #modal-box {
         width: 60%;
+        font-size: 1.75rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    #modal-box {
+        font-size: 1.25rem;
     }
 }

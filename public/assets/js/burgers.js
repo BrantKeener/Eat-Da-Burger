@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', shouldAnimate = () => {
 const fadeClassChange = () => {
     const title = document.getElementById('title');
     const content = document.getElementById('content-container');
-    // title.classList.toggle('fade-out');
     title.style = 'display: none';
     content.classList.toggle('fade-in');
 };
@@ -101,6 +100,7 @@ addBurger = () => {
         toggleModal();
         return;
     };
+    name = '';
 };
 
 const toggleModal = () => {
