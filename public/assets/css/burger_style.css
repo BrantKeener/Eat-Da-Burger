@@ -273,6 +273,9 @@ h2 {
 }
 
 @media screen and (max-width: 550px) {
+    #modal-container {
+        height: 115%;
+    }
     #modal-box {
         font-size: 1.25rem;
     }
