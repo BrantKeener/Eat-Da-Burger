@@ -33,7 +33,6 @@ sessionKeeper = () => {
 
 // Event Delegation
 document.addEventListener('click', (event) => {
-    console.log(event.target.id);
     if(event.target.id === 'add-submit') {
         event.preventDefault();
     }
