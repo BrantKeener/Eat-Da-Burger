@@ -83,6 +83,7 @@ addBurger = () => {
     const newBurger = {'name': name};
     if(name !== '') {
         if(name.trim() !== '') {
+            name = '';
             fetch(url, {
                 method: 'POST',
                 body: JSON.stringify(newBurger),
@@ -100,7 +101,6 @@ addBurger = () => {
         toggleModal();
         return;
     };
-    name = '';
 };
 
 const toggleModal = () => {
