@@ -248,6 +248,12 @@ h2 {
     }
 }
 
+@media screen and (max-width: 1125px) {
+    #user-choices {
+        flex-flow: column;
+    }
+}
+
 @media screen and (max-width: 950px) {
     #big-burger {
         visibility: hidden;
@@ -262,7 +268,7 @@ h2 {
     #eaten, #not-eaten {
         width: 90%;
     }
-    #form-house {
+    #form-house, #cust-house{
         margin: 0px 25px 25px;
         width: 90%;
     }
@@ -278,5 +284,12 @@ h2 {
     }
     #modal-box {
         font-size: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #modal-conatiner {
+        height: 150%;
+        width: 100%;
     }
 }
